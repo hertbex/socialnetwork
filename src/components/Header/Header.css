@@ -1,0 +1,11 @@
+header{
+    grid-area: head;
+}
+.img{
+    background-image: url("./img/logo.svg");
+    width: 100px;
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

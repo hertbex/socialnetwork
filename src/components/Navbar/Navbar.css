@@ -1,0 +1,10 @@
+nav{
+    grid-area: nav;
+}
+nav a{
+    display: block;
+    margin: 10px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
