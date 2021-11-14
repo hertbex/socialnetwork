@@ -1,0 +1,33 @@
+.messages{
+    margin-top: 20px;
+}
+.dialog{
+    display: flex;
+    flex-flow: row wrap;
+
+}
+.name{
+    text-align: center;
+    vertical-align: middle;
+    flex-grow: 1;
+}
+.message{
+    padding: 10px 0;
+    padding-left: 10px;
+    text-align: left;
+    background-color: #3c6f94;
+    border-radius: 10px;
+    max-width: 575px;
+    flex-grow: 1;
+}
+textarea{
+    resize: none;
+    display: inline;
+    margin: 0 400px;
+    width: 400px;
+}
+button{
+    padding: 10px  30px;
+    margin: 0 400px;
+    width: 406px;
+}
