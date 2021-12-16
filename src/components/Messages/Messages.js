@@ -1,21 +1,18 @@
+import Chatlist from '../Chatlist/Chatlist'
 import './Messages.css'
+import state from "../../state.js"
+import Dialog from '../Dialog/Dialog'
+import React from "react";
+import {useParams} from "react-router-dom";
+
+let chats = state.chats
+let dialogs = state.dialogs
 export default function Messages(){
+    let { dialogId } = useParams();
     return(
         <div className={"messages"}>
-            <div className={"dialog"}>
-                <p className={"name"}>Иван Иванов</p>
-                <p className={"message"}>Привет</p>
-            </div>
-            <div className={"dialog"}>
-                <p className={"name"}>Илон Маск</p>
-                <p className={"message"}>Го на Марс</p>
-            </div>
-            <div className={"dialog"}>
-                <p className={"name"}>Билл Гейтс</p>
-                <p className={"message"}>Где мой чип?</p>
-            </div>
-            <textarea/>
-            <button>Send</button>
+        <div><Chatlist chats={chats}/></div> 
+        <div><Dialog messages={dialogs[dialogId]}/></div>
         </div>
     )
 }

@@ -1,0 +1,7 @@
+.profile{
+    display: flex;
+}
+.profile img{
+    max-width: 300px;
+    margin-right: 10px;
+}

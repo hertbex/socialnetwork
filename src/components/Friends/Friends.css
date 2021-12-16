@@ -1,0 +1,23 @@
+.friends{
+    display: flex;
+    justify-content: space-around;
+    
+}  
+img{
+    width: 75px;
+    height: 75px;
+}
+.friend p{
+    text-align: center;
+}
+.friend:hover{
+    background-color: rgb(196, 144, 238);
+    transition-duration: .2s;
+}
+.friend:active{
+    background-color: darkslateblue;
+}
+.friend{
+    padding: 3px;
+    background-color: rgba(56,50,140,255);
+}
