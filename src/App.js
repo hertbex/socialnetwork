@@ -6,6 +6,7 @@ import Profile from "./components/Profile/Profile";
 import Messages from "./components/Messages/Messages";
 
 function App() {
+    //TODO: instead of .js rename to .jsx
     return (
         <Router>
             <div className={"container"}>

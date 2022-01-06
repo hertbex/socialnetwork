@@ -1,4 +1,5 @@
 import Message from '../Message/Message'
+import {NavLink} from 'react-router-dom';
 import './Chatlist.css'
 export default function Chatlist(props){
     return(
@@ -14,7 +15,9 @@ export default function Chatlist(props){
             </div> */}
             {props.chats.map( (chat)=>{
                 return(
-                    <Message name={chat.name} text={chat.text} key={chat.id}/>
+                    <NavLink to={"/messages/" + chat.id} {...props}>
+                        <Message name={chat.name} text={chat.text} key={chat.id}/>
+                    </NavLink>
                 )
             } )}
         </div>
