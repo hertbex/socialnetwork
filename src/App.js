@@ -15,7 +15,7 @@ function App() {
                 <main>
                     <Routes>
                         <Route path={"*"} element={<Profile/>}/>
-                        <Route path={"/messages"} element={<Messages/>}/>
+                        <Route path={"/messages/*"} element={<Messages/>}/>
                         <Route path={"/profile"} element={<Profile/>}/>
                     </Routes>
                 </main>

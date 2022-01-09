@@ -12,7 +12,7 @@ export default function Messages() {
             <div>
                 <Routes>
                     <Route path="/"  element={<h3>Please select dialog.</h3>}/>
-                    <Route path="/:dialogId" element={<h3>ceef</h3>} />
+                    <Route path="/:dialogId" element={<Dialog dialogs={state.dialogs}/>} />
                 </Routes>
 
             </div>
