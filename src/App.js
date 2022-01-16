@@ -5,8 +5,9 @@ import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Profile from "./components/Profile/Profile";
 import Messages from "./components/Messages/Messages";
 
-function App() {
+function App(props){
     //TODO: instead of .js rename to .jsx
+    
     return (
         <Router>
             <div className={"container"}>
@@ -14,7 +15,7 @@ function App() {
                 <Navbar/>
                 <main>
                     <Routes>
-                        <Route path={"*"} element={<Profile/>}/>
+                        <Route path={"*"} element={<Profile posts={props.state.posts}/>}/>
                         <Route path={"/messages/*"} element={<Messages/>}/>
                         <Route path={"/profile"} element={<Profile/>}/>
                     </Routes>
