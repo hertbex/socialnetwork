@@ -1,23 +1,12 @@
 .dialog{
-    margin-top: 20px;
-}
-.message{
     display: flex;
-    flex-flow: row wrap;
-
+    flex-direction: column;
+    flex-grow: 1;
 }
+
 .name{
     text-align: center;
     vertical-align: middle;
-    flex-grow: 1;
-}
-.message__text{
-    padding: 10px 0;
-    padding-left: 10px;
-    text-align: left;
-    background-color: #3c6f94;
-    border-radius: 10px;
-    max-width: 575px;
     flex-grow: 1;
 }
 textarea{

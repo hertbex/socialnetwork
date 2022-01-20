@@ -2,9 +2,14 @@
     background-color: cadetblue;
     border-radius: 12px;
     margin: 10px;
-    width: 200px;
     padding: 5px;
 }
 .message__text{
     color: #a9e0e7;
+    padding: 10px 0 10px 10px;
+    text-align: left;
+    background-color: #3c6f94;
+    border-radius: 10px;
+    max-width: 575px;
+    flex-grow: 1;
 }

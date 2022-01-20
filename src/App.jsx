@@ -6,8 +6,7 @@ import Profile from "./components/Profile/Profile";
 import Messages from "./components/Messages/Messages";
 
 function App(props){
-    //TODO: instead of .js rename to .jsx
-    
+
     return (
         <Router>
             <div className={"container"}>
@@ -16,8 +15,8 @@ function App(props){
                 <main>
                     <Routes>
                         <Route path={"*"} element={<Profile posts={props.state.posts}/>}/>
-                        <Route path={"/messages/*"} element={<Messages/>}/>
-                        <Route path={"/profile"} element={<Profile/>}/>
+                        <Route path={"/messages/*"} element={<Messages chats={props.state.chats} dialogs={props.state.dialogs}/>}/>
+                        <Route path={"/profile"} element={<Profile posts={props.state.posts}/>}/>
                     </Routes>
                 </main>
             </div>

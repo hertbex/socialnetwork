@@ -1,17 +1,17 @@
 import './Posts.css'
 import Post from "../Post/Post";
 import React from 'react'
-import store from '../../state.js'
+import store from '../../data/state.js'
 import renderTree from '../../render';
-const input = React.createRef()
-const button = React.createRef()
-// store.setRenderTree(renderTree)  
-function addPost(){
-    store.addPost.bind(store)(input.current.value, "Elon Musk")
-    input.current.value = ""
-    // alert(input.current.value)
-}
+// store.setRenderTree(renderTree)
 export default function Posts(props){
+    const input = React.createRef()
+    const button = React.createRef()
+    function addPost(){
+        store.addPost.bind(store)(input.current.value, "Elon Musk")
+        input.current.value = ""
+        // alert(input.current.value)
+    }
     return(<div className={"posts"}>
         <h2>My posts</h2>
         <div className={"posting"}>

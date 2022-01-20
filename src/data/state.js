@@ -46,8 +46,9 @@ let store = {
         this.renderTree(this._state)
     },
     sendMessage(messageText, name, dialogId){
-        let message = { message: messageText, name: name, id: ++this._state.messageLastId }
-        this._state.dialogs[dialogId].unshift(message)
+        let message = { text: messageText, name: name, id: ++this._state.messageLastId }
+        this._state.dialogs[dialogId].push(message)
+        this.onMessageChange()
     },
     setRenderTree(f){
         this.renderTree = f

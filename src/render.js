@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM, { render } from 'react-dom';
-import App from './App';
+import App from "./App";
+
 function renderTree(state){
     ReactDOM.render(
     <React.StrictMode>
