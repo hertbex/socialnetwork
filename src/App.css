@@ -5,6 +5,7 @@
 }
 .container{
   max-width: 1200px;
+  max-height: 1000px;
   width: 100%;
   display: grid;
   grid-template-areas: "head head"
@@ -23,6 +24,9 @@
 main{
   grid-area: main;
   padding: 10px;
+  height: 800px;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 *{
   transition-duration: .2s;

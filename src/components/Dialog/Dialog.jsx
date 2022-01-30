@@ -7,7 +7,7 @@ export default function Dialog(props){
     const params = useParams()
     const textarea = React.createRef()
     function sendMessage(){
-        store.sendMessage.bind(store)(textarea.current.value, "Elon Musk", params.dialogId)
+        store.dispatch({type:"SEND_MESSAGE",messageText:textarea.current.value, name:"Elon Musk", dialogId:params.dialogId})
         textarea.current.value = ""
     }
     return(

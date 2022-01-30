@@ -52,6 +52,21 @@ let store = {
     },
     setRenderTree(f){
         this.renderTree = f
+    },
+    // type DispatchEventType = "SEND_MESSAGE"|"ADD_POST"
+    // type SendMessageEvent = {messageText:string,name:string,dialogId:number}
+    // type AddPostEvent = {postText:string,postAuthor:string}
+    // type DispatchEventPayload = SendMessageEvent|AddPostEvent
+    // type DispatchEvent = {type:DispatchEventType,payload:DispatchEventPayload}
+    dispatch(e){
+        switch(e.type){
+            case "SEND_MESSAGE":
+                this.sendMessage(e.messageText, e.name, e.dialogId)
+                break
+            case "ADD_POST":
+                this.addPost(e.postText, e.postAuthor)
+                break
+        }
     }
 }
 export default store 

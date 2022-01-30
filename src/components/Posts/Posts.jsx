@@ -8,7 +8,7 @@ export default function Posts(props){
     const input = React.createRef()
     const button = React.createRef()
     function addPost(){
-        store.addPost.bind(store)(input.current.value, "Elon Musk")
+        store.dispatch({type:"ADD_POST",postText:input.current.value, postAuthor:"Elon Musk"})
         input.current.value = ""
         // alert(input.current.value)
     }
