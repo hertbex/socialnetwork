@@ -1,13 +1,13 @@
 import Message from '../Message/Message'
 import './Dialog.css'
 import { NavLink, useParams } from 'react-router-dom'
-import store from "../../data/state";
+import store, {SEND_MESSAGE} from "../../data/state";
 import React from "react";
 export default function Dialog(props){
     const params = useParams()
     const textarea = React.createRef()
     function sendMessage(){
-        store.dispatch({type:"SEND_MESSAGE",messageText:textarea.current.value, name:"Elon Musk", dialogId:params.dialogId})
+        store.dispatch({type:SEND_MESSAGE,messageText:textarea.current.value, name:"Elon Musk", dialogId:params.dialogId})
         textarea.current.value = ""
     }
     return(

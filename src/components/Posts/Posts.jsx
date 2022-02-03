@@ -1,14 +1,14 @@
 import './Posts.css'
 import Post from "../Post/Post";
 import React from 'react'
-import store from '../../data/state.js'
+import store, {ADD_POST, addPostAC} from '../../data/state.js'
 import renderTree from '../../render';
 // store.setRenderTree(renderTree)
 export default function Posts(props){
     const input = React.createRef()
     const button = React.createRef()
     function addPost(){
-        store.dispatch({type:"ADD_POST",postText:input.current.value, postAuthor:"Elon Musk"})
+        store.dispatch(addPostAC(input.current.value,"Elon Musk"))
         input.current.value = ""
         // alert(input.current.value)
     }
