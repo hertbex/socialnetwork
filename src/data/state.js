@@ -3,7 +3,9 @@ export const ADD_POST = "ADD_POST"
 export function addPostAC(message, author) {
     return {type: ADD_POST, postText: message, postAuthor: author}
 }
-//TODO: make sendMessageAC func
+export function sendMessageAC(message, name, dialogId){
+    return{type: SEND_MESSAGE, messageText: message, name: name, dialogId: id}
+}
 let store = {
     _state: {
         posts: [
