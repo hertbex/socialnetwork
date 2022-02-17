@@ -37,12 +37,13 @@ function Posts(props){
     </div>)
 }
 
-const mapStateToProps = state => ({
-    posts: state.posts
-})
-
+const mapStateToProps = state => {
+    return{
+        posts: state.postReducer.posts
+    }
+}
 const mapDispatchToProps = dispatch => ({
     dispatch: dispatch
-})
+    })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Posts)

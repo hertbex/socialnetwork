@@ -76,8 +76,14 @@
 //
 // }
 // export default store
-export const SEND_MESSAGE = "SEND_MESSAGE"
-export const ADD_POST = "ADD_POST"
+export function addPostAC(message, author) {
+    return {type: 'post/add', postText: message, postAuthor: author}
+}
+export function sendMessageAC(message, name, dialogId){
+    return{type: 'message/add', messageText: message, name: name, dialogId: dialogId}
+}
+// export const SEND_MESSAGE = "SEND_MESSAGE"
+// export const ADD_POST = "ADD_POST"
 export function postReducer(state = {
     posts: [{message: "text", author: "Elon musk", id: 0},
         {message: "1234", author: "Elan mask", id: 1},
@@ -86,20 +92,19 @@ export function postReducer(state = {
     switch (action.type) {
         case 'post/add':
             return {
-                posts: [...state.posts, {
-                    message: action.postText,
-                    author: action.postAuthor,
-                    id: state.postLastId + 1
-                }],
+                posts: [
+                    {
+                        message: action.postText,
+                        author: action.postAuthor,
+                        id: state.postLastId + 1
+                    },
+                    ...state.posts
+                ],
                 postLastId: state.postLastId + 1
             }
         default:
             return state
     }
-}
-
-export function addPostAC(message, author) {
-    return {type: 'post/add', postText: message, postAuthor: author}
 }
 export function messageReducer(state = {
     chats: [
@@ -127,7 +132,7 @@ export function messageReducer(state = {
         //
 //           this._state.dialogs[dialogId].push(message)
         case 'message/add':
-            const newState = {chats: state.chats, dialogs: [...state.dialogs], messageLastId: state.messageLastId + 1}
+            const newState = {chats: state.chats, dialogs: {...state.dialogs}, messageLastId: state.messageLastId + 1}
             const message = {text: action.messageText, name: action.name, id: state.messageLastId + 1}
             newState.dialogs[action.dialogId].push(message)
             return newState
