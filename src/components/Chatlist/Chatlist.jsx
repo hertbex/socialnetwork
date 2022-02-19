@@ -16,7 +16,7 @@ export default function Chatlist(props){
             </div> */}
             {props.chats.map( (chat)=>{
                 return(
-                    <PullRelease><NavLink to={"/messages/" + chat.id} key={chat.id}>
+                    <PullRelease key={chat.id}><NavLink to={"/messages/" + chat.id} >
                         <Message name={chat.name} text={chat.text}/>
                     </NavLink></PullRelease>
                 )

@@ -20,6 +20,9 @@
     opacity: 1;
     transition: opacity 2000ms;
 }
+.message-enter-done {
+
+}
 .message-exit {
     opacity: 1;
 }

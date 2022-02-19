@@ -4,6 +4,7 @@ import { NavLink, useParams } from 'react-router-dom'
 import React from "react";
 import {sendMessageAC} from "../../data/state";
 import {connect} from "react-redux";
+import {CSSTransition, TransitionGroup} from "react-transition-group";
 function Dialog(props){
     const params = useParams()
     const textarea = React.createRef()
@@ -12,12 +13,18 @@ function Dialog(props){
         textarea.current.value = ""
     }
     return(
-        <div className={"dialog"}>
-             <NavLink to={"/dialogs/1"}>Иван Иванов </NavLink>
-            {props.dialogs[params.dialogId].map((message)=><Message name={message.name} text={message.text} key={message.id}/>)}
-            <textarea ref={textarea}/>
-            <button onClick={sendMessage}>Отправить</button>
+        <div><NavLink to={"/dialogs/1"} key={"NavLink"}>Иван Иванов </NavLink>
+            <TransitionGroup component={"div"} className={"dialog"} key={"TransitionGroup"}>
+                {props.dialogs[params.dialogId].map((message) =>
+                    <CSSTransition timeout={2000} classNames="message" key={props.key}>
+                        <Message name={message.name} text={message.text} key={message.id}/>
+                    </CSSTransition>
+                )}
+            </TransitionGroup>
+            <textarea ref={textarea} key={"textarea"}/>
+            <button onClick={sendMessage} key={"button"}>Отправить</button>
         </div>
+        
     )
 }
 const mapDispatchToProps = dispatch => ({
